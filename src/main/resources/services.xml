@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service name="Axis2PingService" >
+    <description>Axis2PingService service</description>
+
+    <parameter name="ServiceClass" locked="false">ua.kiev.sinenko.Axis2PingService</parameter>
+    <operation name="ping">
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </operation>
+    <operation name="add">
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </operation>
+</service>
+
