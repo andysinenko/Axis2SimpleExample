@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<service name="Axis2PingService" >
-    <description>Axis2PingService service</description>
-
-    <parameter name="ServiceClass" locked="false">ua.kiev.sinenko.Axis2PingService</parameter>
-    <operation name="ping">
-        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
-    </operation>
-    <operation name="add">
-        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
-    </operation>
-</service>
+<serviceGroup>
+    <service name="CreateUserService">
+        <description>CreateUser service for creating users in WSO2 ESB</description>
+        <parameter name="ServiceClass" locked="false">ua.kiev.sinenko.CreateUserService</parameter>
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-only" class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+        </messageReceivers>
+    </service>
+</serviceGroup>
 

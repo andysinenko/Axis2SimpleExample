@@ -49,7 +49,7 @@
                 <artifactId>axis2-aar-maven-plugin</artifactId>
                 <configuration>
                     <servicesXmlFile>${basedir}/src/main/resources/services.xml</servicesXmlFile>
-                    <wsdlFile>${project.build.directory}/Axis2PingService.wsdl</wsdlFile>
+                    <wsdlFile>${project.build.directory}/CreateUserService.wsdl</wsdlFile>
                 </configuration>
                 <executions>
                     <execution>
@@ -60,7 +60,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.axis2</groupId>
                 <artifactId>axis2-java2wsdl-maven-plugin</artifactId>
                 <version>1.5.4</version>
@@ -73,10 +73,14 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <className>ua.kiev.sinenko.Axis2PingService</className>
-                    <outputFileName>${project.build.directory}/Axis2PingService.wsdl</outputFileName>
+                    <extraClasses>
+                        <extraClass>ua.kiev.sinenko.Role</extraClass>
+                        <extraClass>ua.kiev.sinenko.User</extraClass>
+                    </extraClasses>
+                    <className>ua.kiev.sinenko.CreateUserService</className>
+                    <outputFileName>${project.build.directory}/CreateUserService.wsdl</outputFileName>
                 </configuration>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
